@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+    });
+
     // Walking Cat Logic
     const catContainer = document.getElementById('cat-container');
     let pos = -150;
