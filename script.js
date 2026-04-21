@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Walking Cat Logic
     const catContainer = document.getElementById('cat-container');
     let pos = -150;
-    let speed = 2;
+    let speed = 1;
     let direction = 1; // 1 for right, -1 for left
 
     function animateCat() {
