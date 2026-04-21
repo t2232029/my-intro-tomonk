@@ -29,7 +29,7 @@ body::before {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at center, rgba(88,166,255,0.1) 0%, rgba(188,140,255,0.05) 30%, rgba(13,17,23,1) 70%);
+    background: radial-gradient(circle at center, rgba(88, 166, 255, 0.05) 0%, rgba(13, 17, 23, 1) 100%);
     z-index: -1;
     animation: rotateGradient 25s linear infinite;
 }
