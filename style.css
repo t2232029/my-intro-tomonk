@@ -217,3 +217,43 @@ footer {
     p, ul { font-size: 1rem; }
     section { min-height: 60vh; }
 }
+
+/* Walking Cat Styles */
+#cat-container {
+    position: fixed;
+    bottom: 20px;
+    left: -150px; /* Start off-screen */
+    width: 120px;
+    z-index: 9999;
+    pointer-events: auto;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#walking-cat {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.5));
+    animation: bob 0.6s infinite alternate ease-in-out;
+}
+
+@keyframes bob {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+#cat-container.jumping {
+    animation: jump 0.5s ease-out;
+}
+
+@keyframes jump {
+    0% { bottom: 20px; }
+    50% { bottom: 120px; }
+    100% { bottom: 20px; }
+}
+
+@media (max-width: 768px) {
+    #cat-container {
+        width: 80px;
+    }
+}

@@ -37,5 +37,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+    // Walking Cat Logic
+    const catContainer = document.getElementById('cat-container');
+    let pos = -150;
+    let speed = 2;
+    let direction = 1; // 1 for right, -1 for left
+
+    function animateCat() {
+        pos += speed * direction;
+        catContainer.style.left = pos + 'px';
+
+        // Boundary check
+        if (pos > window.innerWidth) {
+            direction = -1;
+            catContainer.style.transform = 'scaleX(-1)';
+        } else if (pos < -150) {
+            direction = 1;
+            catContainer.style.transform = 'scaleX(1)';
+        }
+
+        requestAnimationFrame(animateCat);
+    }
+
+    // Start walking
+    animateCat();
+
+    // Interaction: Jump on click
+    catContainer.addEventListener('click', () => {
+        if (!catContainer.classList.contains('jumping')) {
+            catContainer.classList.add('jumping');
+            setTimeout(() => {
+                catContainer.classList.remove('jumping');
+            }, 500);
+        }
     });
 });
